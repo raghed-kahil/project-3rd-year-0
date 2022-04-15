@@ -95,6 +95,12 @@ CREATE TABLE `r_menu` (
     FOREIGN KEY `fk_RM_category_id` (`category_id`) REFERENCES `r_menu_categories`(`id`)
 );
 
+CREATE TABLE `r_taxes` (
+    `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    `min_total` DECIMAL(10,2) UNSIGNED,
+    `tax_rate` FLOAT UNSIGNED
+);
+
 CREATE TABLE `r_bookings` (
     `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     `customer_id` INT UNSIGNED NOT NULL,
