@@ -204,6 +204,7 @@ CREATE TABLE `a_employees` (
     `first_name` VARCHAR(255) NOT NULL,
     `last_name` VARCHAR(255) NOT NULL,
     `national_id` VARCHAR(255) NOT NULL,
+    `section` ENUM('H','R','I') NULL,
     `salary` DECIMAL(8,2) UNSIGNED NULL DEFAULT 0
 );
 
@@ -211,7 +212,6 @@ CREATE TABLE `a_employee_jobs` (
     `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     `employee_id` INT UNSIGNED,
     `job_id` INT UNSIGNED,
-    `section` ENUM('H','R','I') NULL,
     `start_date` DATE NOT NULL DEFAULT CURRENT_DATE,
     `end_date` DATE NULL,
     FOREIGN KEY `fk_AEJ_employee_id` (`employee_id`) REFERENCES `a_employees`(`id`),
